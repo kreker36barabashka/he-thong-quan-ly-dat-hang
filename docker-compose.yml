@@ -1,7 +1,7 @@
 version: '3.8'  # Specify the version of the Docker Compose file
 services:
   backend:
-    build: ./backend
+    build: ./backend  # Build the backend service from the specified directory
     ports:
       - '5000:5000'  # Expose backend on port 5000
     depends_on:
@@ -9,13 +9,13 @@ services:
     networks:
       - app-network  # Connect backend to app-network
   mongo:
-    image: mongo
+    image: mongo  # Use the official MongoDB image
     ports:
       - '27017:27017'  # Expose mongo on port 27017
     networks:
       - app-network  # Connect mongo to app-network
   frontend:
-    build: ./frontend
+    build: ./frontend  # Build the frontend service from the specified directory
     ports:
       - '3000:3000'  # Expose frontend on port 3000
     networks:
