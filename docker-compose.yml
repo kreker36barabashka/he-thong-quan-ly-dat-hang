@@ -22,4 +22,4 @@ services:
       - app-network  # Connect frontend to app-network
 networks:
   app-network:
-    driver: bridge  # Use bridge driver for networking
+    driver: bridge  # Use bridge driver for networking to enable communication between services
