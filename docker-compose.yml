@@ -3,14 +3,14 @@ services:
   backend:
     build: ./backend
     ports:
-      - '5000:5000'
+      - '5000:5000'  # Expose backend on port 5000
     depends_on:
-      - mongo
+      - mongo  # Ensure mongo service is ready before starting backend
   mongo:
     image: mongo
     ports:
-      - '27017:27017'
+      - '27017:27017'  # Expose mongo on port 27017
   frontend:
     build: ./frontend
     ports:
-      - '3000:3000'
+      - '3000:3000'  # Expose frontend on port 3000
