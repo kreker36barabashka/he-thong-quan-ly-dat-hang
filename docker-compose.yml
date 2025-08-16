@@ -7,19 +7,19 @@ services:
     depends_on:
       - mongo  # Ensure mongo service is ready before starting backend
     networks:
-      - app-network
+      - app-network  # Connect backend to app-network
   mongo:
     image: mongo
     ports:
       - '27017:27017'  # Expose mongo on port 27017
     networks:
-      - app-network
+      - app-network  # Connect mongo to app-network
   frontend:
     build: ./frontend
     ports:
       - '3000:3000'  # Expose frontend on port 3000
     networks:
-      - app-network
+      - app-network  # Connect frontend to app-network
 networks:
   app-network:
-    driver: bridge
+    driver: bridge  # Use bridge driver for networking
