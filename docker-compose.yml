@@ -23,3 +23,5 @@ services:
 networks:
   app-network:
     driver: bridge  # Use bridge driver for networking to enable communication between services
+
+# Note: Ensure you are using Docker Compose version 1.27.0 or higher for compatibility with version 3.8.
